@@ -76,7 +76,7 @@ module.exports = {
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 10240, //小于该值会被编码成base64，注：1024=>1kb
+                        limit: 102400, //小于该值会被编码成base64，注：1024=>1kb
                         name: 'assets/[name]_[hash:4].[ext]'
                     }
                 }]
