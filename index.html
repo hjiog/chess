@@ -1,99 +1,27 @@
 <!DOCTYPE html>
-<!-- <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding"> -->
-
-<html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>在线双人象棋对战</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/pwa-192x192.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aba9">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
-
 <body>
-  <div class="body">
-    <div class="left">
-
-      <div>
-        <div><button type="button" class="btn btn-primary w-100 my-2" id="aiStart" onclick="aiStart()">人机对弈</button>
-        </div>
-        <div><button type="button" class="btn btn-primary w-100 my-2" id="onlineStart"
-            onclick="onlineStart()">双人对战</button>
-        </div>
-        <button type="button" class="btn btn-primary w-100 my-2" id="regret">悔棋</button>
-      </div>
-
-      <div class="online-msg">
-        <div style="display: none" id="roomInput">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="请输入房间号" id="roomID">
-            <div class="input-group-append">
-              <button type="button" class="btn btn-primary" onclick="confirms()">确定</button>
-            </div>
-          </div>
-        </div>
-
-        <div id="tips"></div>
-        <div class="input-group mb-3" id="startTalk" style="display: none">
-          <input class="form-control" type="text" placeholder="请输入聊天内容" id="talkInput">
-          <div class="input-group-append">
-            <button type="button" class="btn btn-primary" onclick="send()">发送</button>
-          </div>
-          <div><textarea name="" class="form-control" id="talkArea" cols="30" rows="10" disabled
-              placeholder="聊天记录"></textarea></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="containers">
-      <div id="chessboard">
-        <picture>
-          <img src="assets//红修/兵.png" alt="" class="chess" id="b1">
-          <img src="assets/红修/兵.png" alt="" class="chess" id="b2">
-          <img src="assets/红修/兵.png" alt="" class="chess" id="b3">
-          <img src="assets/红修/兵.png" alt="" class="chess" id="b4">
-          <img src="assets/红修/兵.png" alt="" class="chess" id="b5">
-          <img src="assets/红修/马.png" alt="" class="chess" id="m1">
-          <img src="assets/红修/马.png" alt="" class="chess" id="m2">
-          <img src="assets/红修/相.png" alt="" class="chess" id="x1">
-          <img src="assets/红修/相.png" alt="" class="chess" id="x2">
-          <img src="assets/红修/炮.png" alt="" class="chess" id="p1">
-          <img src="assets/红修/炮.png" alt="" class="chess" id="p2">
-          <img src="assets/红修/士.png" alt="" class="chess" id="s1">
-          <img src="assets/红修/士.png" alt="" class="chess" id="s2">
-          <img src="assets/红修/车.png" alt="" class="chess" id="c1">
-          <img src="assets/红修/车.png" alt="" class="chess" id="c2">
-          <img src="assets/红修/将.png" alt="" class="chess" id="j1">
-
-          <img src="assets/黑修/兵.png" alt="" class="chess" id="B1">
-          <img src="assets/黑修/兵.png" alt="" class="chess" id="B2">
-          <img src="assets/黑修/兵.png" alt="" class="chess" id="B3">
-          <img src="assets/黑修/兵.png" alt="" class="chess" id="B4">
-          <img src="assets/黑修/兵.png" alt="" class="chess" id="B5">
-          <img src="assets/黑修/马.png" alt="" class="chess" id="M1">
-          <img src="assets/黑修/马.png" alt="" class="chess" id="M2">
-          <img src="assets/黑修/象.png" alt="" class="chess" id="X1">
-          <img src="assets/黑修/象.png" alt="" class="chess" id="X2">
-          <img src="assets/黑修/炮.png" alt="" class="chess" id="P1">
-          <img src="assets/黑修/炮.png" alt="" class="chess" id="P2">
-          <img src="assets/黑修/士.png" alt="" class="chess" id="S1">
-          <img src="assets/黑修/士.png" alt="" class="chess" id="S2">
-          <img src="assets/黑修/车.png" alt="" class="chess" id="C1">
-          <img src="assets/黑修/车.png" alt="" class="chess" id="C2">
-          <img src="assets/黑修/将.png" alt="" class="chess" id="J1">
-
-          <img src="assets/r_box.png" alt="" class="box" id="r_box1">
-          <img src="assets/r_box.png" alt="" class="box" id="r_box2">
-          <img src="assets/r_box.png" alt="" class="box" id="r_box3">
-          <img src="assets/b_box.png" alt="" class="box" id="b_box1">
-          <img src="assets/b_box.png" alt="" class="box" id="b_box2">
-          <img src="assets/b_box.png" alt="" class="box" id="b_box3">
-        </picture>
-
-      </div>
-    </div>
-
-  </div>
+  <div id="app"></div>
+  <script>
+    (function() {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('color-schema') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+  </script>
+  <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>

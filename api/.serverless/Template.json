@@ -1,0 +1,10 @@
+{
+  "components": {
+    "Conf": "/home/fighting/.serverless/components/registry/npm/serverless-global@0.0.5/node_modules/serverless-global",
+    "goBucket": "/home/fighting/.serverless/components/registry/npm/@gosls/tencent-cos@0.0.2/node_modules/@gosls/tencent-cos",
+    "goApi": "/home/fighting/.serverless/components/registry/npm/@gosls/tencent-apigateway@0.0.2/node_modules/@gosls/tencent-apigateway",
+    "ChatRegGO": "/home/fighting/.serverless/components/registry/npm/@gosls/tencent-scf@0.0.2/node_modules/@gosls/tencent-scf",
+    "ChatTransGO": "/home/fighting/.serverless/components/registry/npm/@gosls/tencent-scf@0.0.2/node_modules/@gosls/tencent-scf",
+    "ChatCleanGO": "/home/fighting/.serverless/components/registry/npm/@gosls/tencent-scf@0.0.2/node_modules/@gosls/tencent-scf"
+  }
+}

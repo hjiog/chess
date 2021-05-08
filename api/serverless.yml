@@ -1,0 +1,94 @@
+Conf:
+  component: "serverless-global"
+  inputs:
+    region: ap-guangzhou
+    bucket: pubilc-websocket-1300852544
+    secret_id: AKIDbr03ydIVmwhEXao7Qci03tTshIdynzdh
+    secret_key: DCwQwQfgUJtXyEPTLyveFmHkAPGgCWdX
+    appName: chessDemo
+    stage: dev
+    url: http://set-websocket.cb-common.apigateway.tencentyun.com/api-avye7g9w
+
+goBucket:
+  component: "@gosls/tencent-cos"
+  app: ${Conf.appName}
+  stage: dev
+  inputs:
+    bucket: ${Conf.bucket}
+    region: ${Conf.region}
+
+goApi:
+  component: "@gosls/tencent-apigateway"
+  name: myApi
+  app: ${Conf.appName}
+  stage: dev
+  inputs:
+    region: ${Conf.region}
+    protocols:
+      - http
+      - https
+    serviceName: ChatDemoGO
+    environment: release
+    endpoints:
+      - path: /
+        method: GET
+        protocol: WEBSOCKET
+        serviceTimeout: 800
+        function:
+          transportFunctionName: ChatTransGO
+          registerFunctionName: ChatRegGO
+          cleanupFunctionName: ChatCleanGO
+
+ChatRegGO:
+  component: "@gosls/tencent-scf"
+  app: ${Conf.appName}
+  stage: dev
+  inputs:
+    name: ChatRegGO
+    codeUri: ./bin/reg
+    handler: reg
+    runtime: Go1
+    region: ${Conf.region}
+    environment:
+      variables:
+        region: ${Conf.region}
+        bucket: ${Conf.bucket}
+        secret_id: ${Conf.secret_id}
+        secret_key: ${Conf.secret_key}
+        url: ${output:${Conf.stage}:${Conf.appName}:myApi.apis[0].internalDomain}
+
+ChatTransGO:
+  component: "@gosls/tencent-scf"
+  app: ${Conf.appName}
+  stage: dev
+  inputs:
+    name: ChatTransGO
+    codeUri: ./bin/trans
+    handler: trans
+    runtime: Go1
+    region: ${Conf.region}
+    environment:
+      variables:
+        region: ${Conf.region}
+        bucket: ${Conf.bucket}
+        secret_id: ${Conf.secret_id}
+        secret_key: ${Conf.secret_key}
+        url: ${Conf.url}
+
+ChatCleanGO:
+  component: "@gosls/tencent-scf"
+  app: ${Conf.appName}
+  stage: dev
+  inputs:
+    name: ChatCleanGO
+    codeUri: ./bin/clean
+    handler: clean
+    runtime: Go1
+    region: ${Conf.region}
+    environment:
+      variables:
+        region: ${Conf.region}
+        bucket: ${Conf.bucket}
+        secret_id: ${Conf.secret_id}
+        secret_key: ${Conf.secret_key}
+        url: ${Conf.url}

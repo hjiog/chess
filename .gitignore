@@ -1,4 +1,9 @@
-src/github.com/*
-src/golang.org/*
+.DS_Store
+.vite-ssg-dist
+.vite-ssg-temp
+*.local
+dist
+dist-ssr
 node_modules
-bootstrap-4.3.1-dist
+# intellij stuff
+.idea/

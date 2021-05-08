@@ -1,0 +1,24 @@
+{
+  "protocols": [
+    "http",
+    "https"
+  ],
+  "subDomain": "service-qgnrlvfs-1300852544.gz.apigw.tencentcs.com",
+  "environment": "release",
+  "region": "ap-guangzhou",
+  "service": {
+    "value": "service-qgnrlvfs",
+    "created": true
+  },
+  "apis": [
+    {
+      "path": "/",
+      "method": "GET",
+      "apiId": {
+        "value": "api-avye7g9w",
+        "created": true,
+        "internalDomain": "http://set-websocket.cb-common.apigateway.tencentyun.com/api-avye7g9w"
+      }
+    }
+  ]
+}

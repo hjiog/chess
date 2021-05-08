@@ -1,0 +1,16 @@
+{
+  "deployed": {
+    "Name": "ChatRegGO",
+    "Runtime": "Go1",
+    "Handler": "reg",
+    "MemorySize": 128,
+    "Timeout": 3,
+    "Region": "ap-guangzhou",
+    "Namespace": "default",
+    "Description": "This is a template function",
+    "layers": []
+  },
+  "codeHash": "7a0233e99ec38c9101c0fa2263ca097d",
+  "Bucket": "sls-cloudfunction-ap-guangzhou-code",
+  "Key": "sls-cloudfunction-default-ChatRegGO-1592463733.zip"
+}

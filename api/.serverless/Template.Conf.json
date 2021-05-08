@@ -1,0 +1,9 @@
+{
+  "region": "ap-guangzhou",
+  "bucket": "pubilc-websocket-1300852544",
+  "secret_id": "AKIDbr03ydIVmwhEXao7Qci03tTshIdynzdh",
+  "secret_key": "DCwQwQfgUJtXyEPTLyveFmHkAPGgCWdX",
+  "appName": "chessDemo",
+  "stage": "dev",
+  "url": "http://set-websocket.cb-common.apigateway.tencentyun.com/api-avye7g9w"
+}

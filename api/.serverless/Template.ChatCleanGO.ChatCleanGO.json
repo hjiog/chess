@@ -1,0 +1,16 @@
+{
+  "deployed": {
+    "Name": "ChatCleanGO",
+    "Runtime": "Go1",
+    "Handler": "clean",
+    "MemorySize": 128,
+    "Timeout": 3,
+    "Region": "ap-guangzhou",
+    "Namespace": "default",
+    "Description": "This is a template function",
+    "layers": []
+  },
+  "codeHash": "88ab5b4f1085e26423572c014378d621",
+  "Bucket": "sls-cloudfunction-ap-guangzhou-code",
+  "Key": "sls-cloudfunction-default-ChatCleanGO-1592463733.zip"
+}
