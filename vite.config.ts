@@ -144,7 +144,11 @@ export default defineConfig({
     },
   },
 
-  server:{
-    force:true
-  }
+  server: {
+    force: true,
+  },
+
+  build: {
+    outDir: 'docs',
+  },
 })
