@@ -38,9 +38,9 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
-      pagesDir: [
-        { dir: 'src/pages', baseRoute: 'chess' },
-      ],
+      // pagesDir: [
+      //   { dir: 'src/pages', baseRoute: 'chess' },
+      // ],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
