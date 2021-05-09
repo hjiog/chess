@@ -123,8 +123,6 @@ export default defineConfig({
       'vue',
       'vue-router',
       '@vueuse/core',
-      'ant-design-vue',
-      'lodash-es',
     ],
     exclude: [
       'vue-demi',
