@@ -13,7 +13,7 @@
   </a-modal>
   <div class="container flex flex-row px-5 items-center justify-start">
     <div class="relative">
-      <img src="../assets/chessBoard.jpg" alt="" :style="style" @click="onChessboardClick" />
+      <img src="../assets/chessBoard.jpg" class="z-index-2" :style="style" @click="onChessboardClick" />
       <template v-if="canStart">
         <template v-for="key in Object.keys(realChessMap).map(v=>Number(v))" :key="key">
           <ChessTemplete
@@ -252,7 +252,7 @@ const onStart = (isPlayFirst: boolean) => {
 
 const recieveMsgCallBack = (reciever: RecieverType) => {
   const { currentTop, currentLeft, preLeft, preTop } = reciever
-  if (currentTop || currentLeft) {
+  if (currentTop !== -1) {
     const isLosed = chessMove({ top: 9 - preTop!, left: 8 - preLeft! }, { top: 9 - currentTop!, left: 8 - currentLeft! })
     if (isLosed) {
       message.info({

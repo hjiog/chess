@@ -3,7 +3,7 @@
   <img
     v-if="canShow"
     :src="url"
-    class="cursor-pointer z-index-2 absolute"
+    class="cursor-pointer z-index-3 absolute"
     :style="reactiveStyle"
     @click="onClick"
     @mouseover="onMouseover"
@@ -61,8 +61,8 @@ const reactiveStyle = computed(() => {
 
 let url = ''
 
-Object.keys(props.url!).forEach(key1 => {
-  Object.keys(props.url![key1]).forEach(key2 => {
+Object.keys(props.url!).forEach((key1) => {
+  Object.keys(props.url![key1]).forEach((key2) => {
     url = props.url![key1][key2]
   })
 })

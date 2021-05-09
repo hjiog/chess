@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang='ts'>
-import { defineProps,  computed } from 'vue'
+import { defineProps, computed } from 'vue'
 import {
   useLayout,
   ChessBoxStateMap,
@@ -33,7 +33,6 @@ const reactiveStyle = computed(() => {
   }
 })
 
-
 const canShow = computed(() => {
   const sameColor = ChessActivingState.value & props.type!
   const selected = ChessActivingState.value & ChessTypeEnum.selected
@@ -42,7 +41,7 @@ const canShow = computed(() => {
   const canCurrentBoxShow = (sameColor && selected && isCurrent) || (!sameColor && isCurrent)
   const canPreBoxShow = !sameColor && !isCurrent
   // debugger
-  return  ChessBoxStateMap[props.type!].top >= 0
+  return ChessBoxStateMap[props.type!].top >= 0
   && ChessBoxStateMap[props.type!].left >= 0
   && (canCurrentBoxShow || canPreBoxShow)
 })
@@ -55,8 +54,8 @@ const colorType = Object.keys(ColorBoxUrlMap).find((key) => {
 
 let url = ''
 const propsUrl = ColorBoxUrlMap[Number(colorType!)]
-Object.keys(propsUrl).forEach(key1 => {
-  Object.keys(propsUrl[key1]).forEach(key2 => {
+Object.keys(propsUrl).forEach((key1) => {
+  Object.keys(propsUrl[key1]).forEach((key2) => {
     url = propsUrl[key1][key2]
   })
 })

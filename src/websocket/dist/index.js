@@ -28,7 +28,7 @@ exports.connectWebsocket = function (cb) {
         try {
             var res = JSON.parse(e.data);
             console.log('Received RecieverType: ', res);
-            _message = __assign(__assign({}, res), { currentLeft: 0, currentTop: 0, preLeft: 0, preTop: 0, canOpponentRegret: 0, canRestart: 0, msg: '', talk: '' });
+            _message = __assign(__assign({}, res), { currentLeft: -1, currentTop: -1, preLeft: -1, preTop: -1, canOpponentRegret: 0, canRestart: 0, msg: '', talk: '' });
             cb === null || cb === void 0 ? void 0 : cb(res);
         }
         catch (e) {
