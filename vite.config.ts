@@ -152,5 +152,5 @@ export default defineConfig({
     outDir: 'docs',
   },
 
-  base: 'chess',
+  base: '/chess/',
 })
