@@ -55,11 +55,11 @@
         </a-popover>
 
         <a-button type="primary" class="my-2" :loading="isRequestRestart" @click="onStartOnline">
-          <template v-if="canStart === PlayMode.waitingStart">
-            双人对战
+          <template v-if="canStart === PlayMode.playOnline">
+            重新开始
           </template>
           <template v-else>
-            重新开始
+            双人对战
           </template>
         </a-button>
 
