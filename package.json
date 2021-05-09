@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 3333",
-    "build": "vite build  #cross-env NODE_ENV=production vite-ssg build",
+    "build": "rm ./docs && vite build  #cross-env NODE_ENV=production vite-ssg build",
     "preview": "vite preview",
     "preview-https": "serve docs"
   },
