@@ -138,16 +138,16 @@ exports.chessMove = function (originPostion, currentPostion) {
     chessTypeMap[currentPostion.top][currentPostion.left] = preChessType;
     chessTypeMap[originPostion.top][originPostion.left] = 0;
     // exchange chess ref
+    // debugger
     var preChessRef = chessRefMap[originPostion.top][originPostion.left];
     var currentChessRef = chessRefMap[currentPostion.top][currentPostion.left];
-    var chessTOKilledRef = currentChessRef[currentChessRef.length - 1];
+    var chessToKilledRef = currentChessRef[currentChessRef.length - 1];
     var activingChess = preChessRef.pop();
     currentChessRef.push(activingChess);
-    // debugger
     activingChess.top = currentPostion.top;
     activingChess.left = currentPostion.left;
     if (currentChessType)
-        chessTOKilledRef.isDied = true;
+        chessToKilledRef.isDied = true;
     // recordHistory
     exports.recordHistory({ key: preChessType, pos: originPostion }, { key: currentChessType, pos: currentPostion });
     // change chess box

@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 
 import { alphaBetaSearch } from './computeTask'
 import { Store, MoveType } from '~/common'
 import { MATE_VALUE, MINMAXDEPTH } from '~/webWorker/const'
 
 const ctx: Worker = self as any
+
 ctx.addEventListener('message', (e) => {
   console.log('ai start,recieve data:', e.data)
   // 注意,在webWork引入的Store是一份拷贝,在主程序执行Store.isPlayFirst = true
@@ -12,12 +14,12 @@ ctx.addEventListener('message', (e) => {
 
   const searchResult: MoveType = {
     originPostion: {
-      top: 0,
-      left: 0,
+      top: -1,
+      left: -1,
     },
     currentPostion: {
-      top: 0,
-      left: 0,
+      top: -1,
+      left: -1,
     },
   }
 

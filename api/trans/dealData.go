@@ -83,7 +83,7 @@ func dealData(receiveData string, SecConnectionID string, callBack func(string))
 		}
 	}
 
-	if (user.CurrentTop | user.CurrentLeft) != 0 {
+	if user.CurrentTop != -1 {
 		opponentMsg = *user
 		opponentMsg.ClientID = user.OpponentID
 		opponentMsg.OpponentID = user.ClientID

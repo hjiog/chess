@@ -156,17 +156,17 @@ export const chessMove = (originPostion: Position, currentPostion: Position) => 
   chessTypeMap[originPostion.top][originPostion.left] = 0
 
   // exchange chess ref
+  // debugger
   const preChessRef = chessRefMap[originPostion.top][originPostion.left]
   const currentChessRef = chessRefMap[currentPostion.top][currentPostion.left]
-  const chessTOKilledRef = currentChessRef[currentChessRef.length - 1]
+  const chessToKilledRef = currentChessRef[currentChessRef.length - 1]
   const activingChess = preChessRef.pop()!
   currentChessRef.push(activingChess)
-  // debugger
   activingChess.top = currentPostion.top
   activingChess.left = currentPostion.left
 
   if (currentChessType)
-    chessTOKilledRef.isDied = true
+    chessToKilledRef.isDied = true
 
   // recordHistory
   recordHistory({ key: preChessType, pos: originPostion }, { key: currentChessType, pos: currentPostion })

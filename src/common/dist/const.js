@@ -21,6 +21,7 @@ var _a, _b;
 exports.__esModule = true;
 exports.ChessBoardMap = exports.initChessBoardMap = exports.ColorBoxUrlMap = exports.ChessMap = exports.initChessMap = void 0;
 var chessRules_1 = require("./chessRules");
+var imgImport_1 = require("./imgImport");
 var types_1 = require("~/common/types");
 // 定义棋子价值
 var chessValueB = [
@@ -109,85 +110,85 @@ var chessValueJ = [
 ];
 var _ChessMap = (_a = {},
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.b] = {
-        url: import.meta.globEager('../assets/red/b.png'),
+        url: imgImport_1.imgUrl_b,
         position: [{ top: 6, left: 0 }, { top: 6, left: 2 }, { top: 6, left: 4 }, { top: 6, left: 6 }, { top: 6, left: 8 }],
         getAllMovePosition: chessRules_1.RulesB,
         valueMap: chessValueB
     },
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.c] = {
-        url: import.meta.globEager('../assets/red/c.png'),
+        url: imgImport_1.imgUrl_c,
         position: [{ top: 9, left: 0 }, { top: 9, left: 8 }],
         getAllMovePosition: chessRules_1.RulesC,
         valueMap: chessValueC
     },
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.m] = {
-        url: import.meta.globEager('../assets/red/m.png'),
+        url: imgImport_1.imgUrl_m,
         position: [{ top: 9, left: 1 }, { top: 9, left: 7 }],
         getAllMovePosition: chessRules_1.RulesM,
         valueMap: chessValueM
     },
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.p] = {
-        url: import.meta.globEager('../assets/red/p.png'),
+        url: imgImport_1.imgUrl_p,
         position: [{ top: 7, left: 1 }, { top: 7, left: 7 }],
         getAllMovePosition: chessRules_1.RulesP,
         valueMap: chessValueP
     },
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.s] = {
-        url: import.meta.globEager('../assets/red/s.png'),
+        url: imgImport_1.imgUrl_s,
         position: [{ top: 9, left: 3 }, { top: 9, left: 5 }],
         getAllMovePosition: chessRules_1.RulesS,
         valueMap: chessValueS
     },
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.x] = {
-        url: import.meta.globEager('../assets/red/x.png'),
+        url: imgImport_1.imgUrl_x,
         position: [{ top: 9, left: 2 }, { top: 9, left: 6 }],
         getAllMovePosition: chessRules_1.RulesX,
         valueMap: chessValueX
     },
     _a[types_1.ChessTypeEnum.red | types_1.ChessTypeEnum.j] = {
-        url: import.meta.globEager('../assets/red/j.png'),
+        url: imgImport_1.imgUrl_j,
         position: [{ top: 9, left: 4 }],
         getAllMovePosition: chessRules_1.RulesJ,
         valueMap: chessValueJ
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.b] = {
-        url: import.meta.globEager('../assets/black/B.png'),
+        url: imgImport_1.imgUrl_B,
         position: [{ top: 3, left: 0 }, { top: 3, left: 2 }, { top: 3, left: 4 }, { top: 3, left: 6 }, { top: 3, left: 8 }],
         getAllMovePosition: chessRules_1.RulesB,
         valueMap: __spreadArrays(chessValueB).reverse()
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.c] = {
-        url: import.meta.globEager('../assets/black/C.png'),
+        url: imgImport_1.imgUrl_C,
         position: [{ top: 0, left: 0 }, { top: 0, left: 8 }],
         getAllMovePosition: chessRules_1.RulesC,
         valueMap: __spreadArrays(chessValueC).reverse()
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.m] = {
-        url: import.meta.globEager('../assets/black/M.png'),
+        url: imgImport_1.imgUrl_M,
         position: [{ top: 0, left: 1 }, { top: 0, left: 7 }],
         getAllMovePosition: chessRules_1.RulesM,
         valueMap: __spreadArrays(chessValueM).reverse()
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.p] = {
-        url: import.meta.globEager('../assets/black/P.png'),
+        url: imgImport_1.imgUrl_P,
         position: [{ top: 2, left: 1 }, { top: 2, left: 7 }],
         getAllMovePosition: chessRules_1.RulesP,
         valueMap: __spreadArrays(chessValueP).reverse()
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.s] = {
-        url: import.meta.globEager('../assets/black/S.png'),
+        url: imgImport_1.imgUrl_S,
         position: [{ top: 0, left: 3 }, { top: 0, left: 5 }],
         getAllMovePosition: chessRules_1.RulesS,
         valueMap: __spreadArrays(chessValueS).reverse()
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.x] = {
-        url: import.meta.globEager('../assets/black/X.png'),
+        url: imgImport_1.imgUrl_X,
         position: [{ top: 0, left: 2 }, { top: 0, left: 6 }],
         getAllMovePosition: chessRules_1.RulesX,
         valueMap: __spreadArrays(chessValueX).reverse()
     },
     _a[types_1.ChessTypeEnum.black | types_1.ChessTypeEnum.j] = {
-        url: import.meta.globEager('../assets/black/J.png'),
+        url: imgImport_1.imgUrl_J,
         position: [{ top: 0, left: 4 }],
         getAllMovePosition: chessRules_1.RulesJ,
         valueMap: __spreadArrays(chessValueJ).reverse()
@@ -203,8 +204,8 @@ exports.initChessMap = function () {
 };
 exports.ChessMap = exports.initChessMap();
 exports.ColorBoxUrlMap = (_b = {},
-    _b[types_1.ChessBoxStateEnum.red] = import.meta.globEager('../assets/r_box.png'),
-    _b[types_1.ChessBoxStateEnum.black] = import.meta.globEager('../assets/b_box.png'),
+    _b[types_1.ChessBoxStateEnum.red] = imgImport_1.imgUrl_redBox,
+    _b[types_1.ChessBoxStateEnum.black] = imgImport_1.imgUrl_blueBox,
     _b);
 // 建立10*9的矩阵，存储棋盘棋子的位置
 var getChessBoardMap = function (isNumber) {

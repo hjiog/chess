@@ -1,4 +1,22 @@
 import { RulesB, RulesC, RulesJ, RulesM, RulesP, RulesS, RulesX } from './chessRules'
+import {
+  imgUrl_b,
+  imgUrl_p,
+  imgUrl_c,
+  imgUrl_m,
+  imgUrl_x,
+  imgUrl_s,
+  imgUrl_j,
+  imgUrl_B,
+  imgUrl_P,
+  imgUrl_C,
+  imgUrl_M,
+  imgUrl_X,
+  imgUrl_S,
+  imgUrl_J,
+  imgUrl_redBox,
+  imgUrl_blueBox,
+} from './imgImport'
 import { ChessTypeEnum, ChessBoxStateEnum, ChessBoardMapType, ChessTypeMap, ChessMapType } from '~/common/types'
 
 // 定义棋子价值
@@ -97,85 +115,85 @@ const chessValueJ = [
 
 const _ChessMap = {
   [ChessTypeEnum.red | ChessTypeEnum.b]: {
-    url: import.meta.globEager('../assets/red/b.png'),
+    url: imgUrl_b,
     position: [{ top: 6, left: 0 }, { top: 6, left: 2 }, { top: 6, left: 4 }, { top: 6, left: 6 }, { top: 6, left: 8 }],
     getAllMovePosition: RulesB,
     valueMap: chessValueB,
   },
   [ChessTypeEnum.red | ChessTypeEnum.c]: {
-    url: import.meta.globEager('../assets/red/c.png'),
+    url: imgUrl_c,
     position: [{ top: 9, left: 0 }, { top: 9, left: 8 }],
     getAllMovePosition: RulesC,
     valueMap: chessValueC,
   },
   [ChessTypeEnum.red | ChessTypeEnum.m]: {
-    url: import.meta.globEager('../assets/red/m.png'),
+    url: imgUrl_m,
     position: [{ top: 9, left: 1 }, { top: 9, left: 7 }],
     getAllMovePosition: RulesM,
     valueMap: chessValueM,
   },
   [ChessTypeEnum.red | ChessTypeEnum.p]: {
-    url: import.meta.globEager('../assets/red/p.png'),
+    url: imgUrl_p,
     position: [{ top: 7, left: 1 }, { top: 7, left: 7 }],
     getAllMovePosition: RulesP,
     valueMap: chessValueP,
   },
   [ChessTypeEnum.red | ChessTypeEnum.s]: {
-    url: import.meta.globEager('../assets/red/s.png'),
+    url: imgUrl_s,
     position: [{ top: 9, left: 3 }, { top: 9, left: 5 }],
     getAllMovePosition: RulesS,
     valueMap: chessValueS,
   },
   [ChessTypeEnum.red | ChessTypeEnum.x]: {
-    url: import.meta.globEager('../assets/red/x.png'),
+    url: imgUrl_x,
     position: [{ top: 9, left: 2 }, { top: 9, left: 6 }],
     getAllMovePosition: RulesX,
     valueMap: chessValueX,
   },
   [ChessTypeEnum.red | ChessTypeEnum.j]: {
-    url: import.meta.globEager('../assets/red/j.png'),
+    url: imgUrl_j,
     position: [{ top: 9, left: 4 }],
     getAllMovePosition: RulesJ,
     valueMap: chessValueJ,
   },
   [ChessTypeEnum.black | ChessTypeEnum.b]: {
-    url: import.meta.globEager('../assets/black/B.png'),
+    url: imgUrl_B,
     position: [{ top: 3, left: 0 }, { top: 3, left: 2 }, { top: 3, left: 4 }, { top: 3, left: 6 }, { top: 3, left: 8 }],
     getAllMovePosition: RulesB,
     valueMap: [...chessValueB].reverse(),
   },
   [ChessTypeEnum.black | ChessTypeEnum.c]: {
-    url: import.meta.globEager('../assets/black/C.png'),
+    url: imgUrl_C,
     position: [{ top: 0, left: 0 }, { top: 0, left: 8 }],
     getAllMovePosition: RulesC,
     valueMap: [...chessValueC].reverse(),
   },
   [ChessTypeEnum.black | ChessTypeEnum.m]: {
-    url: import.meta.globEager('../assets/black/M.png'),
+    url: imgUrl_M,
     position: [{ top: 0, left: 1 }, { top: 0, left: 7 }],
     getAllMovePosition: RulesM,
     valueMap: [...chessValueM].reverse(),
   },
   [ChessTypeEnum.black | ChessTypeEnum.p]: {
-    url: import.meta.globEager('../assets/black/P.png'),
+    url: imgUrl_P,
     position: [{ top: 2, left: 1 }, { top: 2, left: 7 }],
     getAllMovePosition: RulesP,
     valueMap: [...chessValueP].reverse(),
   },
   [ChessTypeEnum.black | ChessTypeEnum.s]: {
-    url: import.meta.globEager('../assets/black/S.png'),
+    url: imgUrl_S,
     position: [{ top: 0, left: 3 }, { top: 0, left: 5 }],
     getAllMovePosition: RulesS,
     valueMap: [...chessValueS].reverse(),
   },
   [ChessTypeEnum.black | ChessTypeEnum.x]: {
-    url: import.meta.globEager('../assets/black/X.png'),
+    url: imgUrl_X,
     position: [{ top: 0, left: 2 }, { top: 0, left: 6 }],
     getAllMovePosition: RulesX,
     valueMap: [...chessValueX].reverse(),
   },
   [ChessTypeEnum.black | ChessTypeEnum.j]: {
-    url: import.meta.globEager('../assets/black/J.png'),
+    url: imgUrl_J,
     position: [{ top: 0, left: 4 }],
     getAllMovePosition: RulesJ,
     valueMap: [...chessValueJ].reverse(),
@@ -197,8 +215,8 @@ export const initChessMap = () => {
 export const ChessMap = initChessMap()
 
 export const ColorBoxUrlMap = {
-  [ChessBoxStateEnum.red]: import.meta.globEager('../assets/r_box.png'),
-  [ChessBoxStateEnum.black]: import.meta.globEager('../assets/b_box.png'),
+  [ChessBoxStateEnum.red]: imgUrl_redBox,
+  [ChessBoxStateEnum.black]: imgUrl_blueBox,
 }
 
 // 建立10*9的矩阵，存储棋盘棋子的位置

@@ -50,7 +50,7 @@ export type MoveType = {
 
 export type ChessMapType ={
   [x: number]: {
-    url: Record<string, { [key: string]: any; }>
+    url: string
     position: Position[]
     getAllMovePosition: (props: {
       top: number

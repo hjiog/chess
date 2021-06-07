@@ -65,7 +65,7 @@ export const checkedIsDead = (isAIRound: boolean, chessboardMap: number[][]) => 
   // debugger
   const index = chessboardMap.findIndex((row, top) => {
     const res = row.findIndex((col, left) => {
-      if (canChessMove(col, willFindRedCamp)) {
+      if (canChessMove(col, !willFindRedCamp)) {
         const moveResultArray = ChessMap[col].getAllMovePosition({ top, left, chessType: col, ChessBoardMap: chessboardMap })
         const res = moveResultArray.findIndex(([currentTop, currentLeft]) => {
           return (chessboardMap[currentTop][currentLeft] & ChessTypeEnum.j)

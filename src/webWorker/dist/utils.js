@@ -56,7 +56,7 @@ exports.checkedIsDead = function (isAIRound, chessboardMap) {
     // debugger
     var index = chessboardMap.findIndex(function (row, top) {
         var res = row.findIndex(function (col, left) {
-            if (exports.canChessMove(col, willFindRedCamp)) {
+            if (exports.canChessMove(col, !willFindRedCamp)) {
                 var moveResultArray = common_1.ChessMap[col].getAllMovePosition({ top: top, left: left, chessType: col, ChessBoardMap: chessboardMap });
                 var res_1 = moveResultArray.findIndex(function (_a) {
                     var currentTop = _a[0], currentLeft = _a[1];

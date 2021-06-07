@@ -25,6 +25,7 @@ export function alphaBetaSearch(props: {
 
   // 2. 生成全部走法，并根据历史表排序
   const sort = new MoveSort(isAIRound, chessboardMap)
+
   // debugger
   // 3. 逐一走这些走法，并进行递归
   let val = 0
@@ -34,13 +35,14 @@ export function alphaBetaSearch(props: {
     const { originPostion, currentPostion } = mv!
     const chessType = chessboardMap[currentPostion.top][currentPostion.left]
 
-    // debugger
-    // console.log(mv, 'move', chessType & (ChessTypeEnum.red | ChessTypeEnum.black), chessType & (ChessTypeEnum.j))
-
     // 能将军
     if (chessType & ChessTypeEnum.j) {
       // debugger
       // console.log('能将军??', originPostion, currentPostion, chessboardMap)
+      if (depth === MINMAXDEPTH) {
+        searchResult.currentPostion = currentPostion
+        searchResult.originPostion = originPostion
+      }
       return isAIRound ? MATE_VALUE : -MATE_VALUE
     }
 

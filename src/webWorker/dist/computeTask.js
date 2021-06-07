@@ -24,12 +24,14 @@ function alphaBetaSearch(props) {
     for (var mv = sort.next(); mv; mv = sort.next()) {
         var _a = mv, originPostion = _a.originPostion, currentPostion = _a.currentPostion;
         var chessType = chessboardMap[currentPostion.top][currentPostion.left];
-        // debugger
-        // console.log(mv, 'move', chessType & (ChessTypeEnum.red | ChessTypeEnum.black), chessType & (ChessTypeEnum.j))
         // 能将军
         if (chessType & common_1.ChessTypeEnum.j) {
             // debugger
             // console.log('能将军??', originPostion, currentPostion, chessboardMap)
+            if (depth === const_1.MINMAXDEPTH) {
+                searchResult.currentPostion = currentPostion;
+                searchResult.originPostion = originPostion;
+            }
             return isAIRound ? const_1.MATE_VALUE : -const_1.MATE_VALUE;
         }
         utils_1.setPostion({ originPostion: originPostion, currentPostion: currentPostion, back: false, chessboardMap: chessboardMap });

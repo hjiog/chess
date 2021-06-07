@@ -1,4 +1,5 @@
 "use strict";
+/* eslint-disable no-console */
 exports.__esModule = true;
 var computeTask_1 = require("./computeTask");
 var common_1 = require("~/common");
@@ -11,12 +12,12 @@ ctx.addEventListener('message', function (e) {
     common_1.Store.isPlayFirst = e.data.isPlayFirst;
     var searchResult = {
         originPostion: {
-            top: 0,
-            left: 0
+            top: -1,
+            left: -1
         },
         currentPostion: {
-            top: 0,
-            left: 0
+            top: -1,
+            left: -1
         }
     };
     var value = computeTask_1.alphaBetaSearch({

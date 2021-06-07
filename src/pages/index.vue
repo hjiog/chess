@@ -4,7 +4,9 @@
 </script>
 
 <template>
-  <Chessboard />
+  <!-- <Chessboard /> -->
+  <Home />
+  <!-- <Test /> -->
 </template>
 
 <route lang="yaml">
