@@ -6,6 +6,8 @@
 <script setup lang='ts'>
 import { onMounted, defineProps, watch, toRefs } from 'vue'
 import * as zrender from 'zrender'
+import CanvasPainter from 'zrender/lib/canvas/Painter'
+
 import {
   useLayout,
   imgUrl_chessBoard,
@@ -41,7 +43,10 @@ const chessArr: ({
 onMounted(() => {
   const container = document.getElementById('zr')
 
-  const zr = zrender.init(container!)
+  // 运行vite build时，不知道为啥会将zrender/index.js中的registerPainter函数给删掉
+  // 没想到什么好的解决方法，这里暂时给补上~
+  zrender.registerPainter('canvas', CanvasPainter as any)
+  const zr = zrender.init(container!,{renderer:'canvas'})
   const Chessboard = new zrender.Image({
     style: {
       image: imgUrl_chessBoard,

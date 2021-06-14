@@ -1,16 +1,15 @@
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import Vue from '@vitejs/plugin-vue'
+import Prism from 'markdown-it-prism'
 import path from 'path'
 import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
-import Layouts from 'vite-plugin-vue-layouts'
-import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import ViteComponents from 'vite-plugin-components'
+import ViteIcons, { ViteIconsResolver } from 'vite-plugin-icons'
 import Markdown from 'vite-plugin-md'
-import WindiCSS from 'vite-plugin-windicss'
-import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import Prism from 'markdown-it-prism'
+import Pages from 'vite-plugin-pages'
 import styleImport from 'vite-plugin-style-import'
+import Layouts from 'vite-plugin-vue-layouts'
+import WindiCSS from 'vite-plugin-windicss'
 
 export default defineConfig({
   resolve: {
@@ -83,32 +82,32 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/vite-plugin-pwa
-    VitePWA({
-      registerType: 'autoUpdate',
-      manifest: {
-        name: 'chess',
-        short_name: 'chess',
-        theme_color: '#ffffff',
-        icons: [
-          {
-            src: '/pwa-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-          {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable',
-          },
-        ],
-      },
-    }),
+    // VitePWA({
+    //   registerType: 'autoUpdate',
+    //   manifest: {
+    //     name: 'chess',
+    //     short_name: 'chess',
+    //     theme_color: '#ffffff',
+    //     icons: [
+    //       {
+    //         src: '/chess/favicon.ico',
+    //         sizes: '192x192',
+    //         type: 'image/png',
+    //       },
+    //       {
+    //         src: '/chess/favicon.ico',
+    //         sizes: '512x512',
+    //         type: 'image/png',
+    //       },
+    //       {
+    //         src: '/chess/favicon.ico',
+    //         sizes: '512x512',
+    //         type: 'image/png',
+    //         purpose: 'any maskable',
+    //       },
+    //     ],
+    //   },
+    // }),
 
     // https://github.com/intlify/vite-plugin-vue-i18n
     VueI18n({
