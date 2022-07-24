@@ -5263,10 +5263,10 @@ pluralize@^8.0.0:
   resolved "https://registry.npm.taobao.org/pluralize/download/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha1-Gm+hajjRKhkB4DIPoBcFHFOc47E=
 
-pnpm@^6.2.2:
-  version "6.7.6"
-  resolved "https://registry.nlark.com/pnpm/download/pnpm-6.7.6.tgz#54207ac7b450078a664e2ee8454535431b07c1b7"
-  integrity sha1-VCB6x7RQB4pmTi7oRUU1QxsHwbc=
+pnpm@^6.15.1:
+  version "6.15.1"
+  resolved "https://registry.yarnpkg.com/pnpm/-/pnpm-6.15.1.tgz#2f5983e05ee85c36d1166f6f81dcad1c996f7d10"
+  integrity sha512-hYGK8xlLdMj/sFhOLJ+x8IotsOkBp01c2mdWdLeKlUdA6EOl/RNWRp+7dUWs3Si2E1zgdTiHsEgNGYffv0PyLQ==
 
 postcss-modules-extract-imports@^3.0.0:
   version "3.0.0"
